@@ -57,10 +57,6 @@ export function useVitalityAPI() {
                 thirst: thirst,
             },
         });
-
-        alt.logWarning(
-            `New Values for Hunger: ${rebarPlayer.get().ascendedVitality.hunger} | Thirst: ${rebarPlayer.get().ascendedVitality.thirst}`,
-        );
     }
 
     function getVitalityData(player: alt.Player) {
