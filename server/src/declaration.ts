@@ -1,0 +1,8 @@
+declare module '@Shared/types/character.js' {
+    export interface Character {
+        ascendedVitality: {
+            hunger: number;
+            thirst: number;
+        };
+    }
+}
