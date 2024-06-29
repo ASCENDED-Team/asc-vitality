@@ -7,6 +7,8 @@ const Rebar = useRebar();
 
 export function useVitalityAPI() {
     function createVitalityData(player: alt.Player) {
+        if (!player?.valid) return;
+
         const rebarPlayer = Rebar.document.character.useCharacter(player);
         const vitalityData = getVitalityData(player);
 
@@ -27,6 +29,8 @@ export function useVitalityAPI() {
     }
 
     function startDecreasingValues(player: alt.Player) {
+        if (!player?.valid) return;
+
         const decreaseInterval = setInterval(() => {
             const vitalityData = getVitalityData(player);
 
@@ -49,6 +53,8 @@ export function useVitalityAPI() {
     }
 
     function updateVitalityRates(player: alt.Player, hunger: number, thirst: number) {
+        if (!player?.valid) return;
+
         const rebarPlayer = Rebar.document.character.useCharacter(player);
 
         rebarPlayer.setBulk({
@@ -60,6 +66,8 @@ export function useVitalityAPI() {
     }
 
     function getVitalityData(player: alt.Player) {
+        if (!player?.valid) return false;
+
         const rebarPlayer = Rebar.document.character.useCharacter(player);
         const playerDocument = rebarPlayer.get();
 
